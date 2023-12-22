@@ -34,8 +34,7 @@ Before you begin, ensure that you have the following installed on your machine:
    cd schemaspy-snowflake
    ```
 ## Snowflake Configuration
-Ensure that your Snowflake configuration (config/snowflake.properties) includes the necessary connection details such as account, role, warehouse, and database.
-For this reason replace `your_user`, `your_password`, `your_account`, `your_role,` `your_warehouse`, and `your_database `with your Snowflake credentials.
+At this stage, you need to configure the configuration file located at the following path: config/snowflake.properties. This configuration will be used to establish the connection to Snowflake, so it is necessary to modify the **account**, **role**, **warehouse**, **schema**, and **database** settings.
 
 ```bash
 schemaspy.t=snowflake

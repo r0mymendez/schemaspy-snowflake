@@ -66,7 +66,7 @@ docker-compose -f docker-compose-snowflake.yaml up
 ---
 
 # 🔍 Schemapy
-After executing Docker Compose, you'll find our comprehensive web interface in the output folder. This page features multiple tabs, each offering distinct functionalities, and below, we will explain them
+After executing Docker Compose, you'll find a web site in the output folder. This page features multiple tabs, each offering distinct functionalities, and below, we will explain them
 
 ## Functionality Tabs
 * **Tables:** Provides an overview of all tables in the database schema.

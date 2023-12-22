@@ -21,9 +21,10 @@ This project sets up a Docker Compose environment for utilizing [SchemaSpy](http
 
 Before you begin, ensure that you have the following installed on your machine:
 
-- Docker
-- Docker Compose
-
+- 🐳 Docker
+- 🐙 Docker Compose
+- ❄️ Snowflake account (You can create an account with a 30-day free trial which includes $400 worth of free usage.)
+  
 # Usage
 
 ## Clone this repository
@@ -65,8 +66,8 @@ docker-compose -f docker-compose-snowflake.yaml up
 
 ---
 
-# Schemapy
-Upon executing Docker Compose, you can obtain our entire web page in the output folder (? unsure if it should be phrased this way). This page includes several tabs with the following functionalities:
+# 🔍 Schemapy
+After executing Docker Compose, you'll find our comprehensive web interface in the output folder. This page features multiple tabs, each offering distinct functionalities, and below, we will explain them
 
 ## Functionality Tabs
 * **Tables:** Provides an overview of all tables in the database schema.

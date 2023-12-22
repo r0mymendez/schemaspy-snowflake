@@ -1,0 +1,2 @@
+# schemaspy-snowflake
+schemaspy-snowflake

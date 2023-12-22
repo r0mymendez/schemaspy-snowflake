@@ -56,8 +56,8 @@ Below is an example of an account URL. However, you only need to use a portion o
 ![snowflake account](img/account.png)
 
 
-## Build and run the Docker Compose environment
-This command will build the Docker images and start the containers.
+## 🐙 Build and run the Docker Compose environment
+This command will build the Docker image and start the container.
 
 ```bash
 docker-compose -f docker-compose-snowflake.yaml up

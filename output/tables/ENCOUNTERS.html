@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ENCOUNTERS - SYNTHEA Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>SYNTHEA</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>ENCOUNTERS</h1><p><span id="recordNumber">91396</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="ID">ID</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="ALLERGIES.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_927e5eb0-6c8c-4cc1-a4f2-064676de182a"><a href='ALLERGIES.html'>ALLERGIES</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_927e5eb0-6c8c-4cc1-a4f2-064676de182a<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="CAREPLANS.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_5276bbad-aa94-4aa1-8fe5-8062df7bbc16"><a href='CAREPLANS.html'>CAREPLANS</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_5276bbad-aa94-4aa1-8fe5-8062df7bbc16<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="CONDITIONS.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_8fab7423-f175-4f84-83ef-9fd273d9fa79"><a href='CONDITIONS.html'>CONDITIONS</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_8fab7423-f175-4f84-83ef-9fd273d9fa79<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="DEVICES.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_88977ccd-49e7-4219-90ba-1c9f439b1757"><a href='DEVICES.html'>DEVICES</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_88977ccd-49e7-4219-90ba-1c9f439b1757<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="IMMUNIZATIONS.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_74e6bc52-318f-4d9b-ae74-12e8776dbee7"><a href='IMMUNIZATIONS.html'>IMMUNIZATIONS</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_74e6bc52-318f-4d9b-ae74-12e8776dbee7<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="MEDICATIONS.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_0e092281-2d6e-471c-8475-e76ac484b3e1"><a href='MEDICATIONS.html'>MEDICATIONS</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_0e092281-2d6e-471c-8475-e76ac484b3e1<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="OBSERVATIONS.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_4b5caadd-24c2-4545-b02a-1941d5acc009"><a href='OBSERVATIONS.html'>OBSERVATIONS</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_4b5caadd-24c2-4545-b02a-1941d5acc009<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="PROCEDURES.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_645afbba-0392-4453-845f-456cd9e88c90"><a href='PROCEDURES.html'>PROCEDURES</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_645afbba-0392-4453-845f-456cd9e88c90<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="SUPPLIES.ENCOUNTER references ENCOUNTERS.ID via SYS_CONSTRAINT_c8afb533-359a-4c0f-b21e-08aca4665862"><a href='SUPPLIES.html'>SUPPLIES</a><span class='relatedKey'>.ENCOUNTER</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_c8afb533-359a-4c0f-b21e-08aca4665862<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="START">START</span></td>
+                                    <td>DATE</td>
+                                    <td>0</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="STOP">STOP</span></td>
+                                    <td>DATE</td>
+                                    <td>0</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="PATIENT">PATIENT</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="ENCOUNTERS.PATIENT references PATIENTS.ID via SYS_CONSTRAINT_e0684af9-ae3f-499c-a922-c005b4709394"><a href='PATIENTS.html'>PATIENTS</a><span class='relatedKey'>.ID</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_e0684af9-ae3f-499c-a922-c005b4709394<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="ORGANIZATION">ORGANIZATION</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="PROVIDER">PROVIDER</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="ENCOUNTERS.PROVIDER references PROVIDERS.ID via SYS_CONSTRAINT_571a191b-05f1-487f-8066-08c10ca615ae"><a href='PROVIDERS.html'>PROVIDERS</a><span class='relatedKey'>.ID</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_571a191b-05f1-487f-8066-08c10ca615ae<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="PAYER">PAYER</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="ENCOUNTERS.PAYER references PAYERS.ID via SYS_CONSTRAINT_f49cf6bc-f485-491e-a4e1-bcfde465e348"><a href='PAYERS.html'>PAYERS</a><span class='relatedKey'>.ID</span></td>
+                                                <td class="constraint detail">SYS_CONSTRAINT_f49cf6bc-f485-491e-a4e1-bcfde465e348<span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="ENCOUNTERCLASS">ENCOUNTERCLASS</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="CODE">CODE</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="DESCRIPTION">DESCRIPTION</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="BASE_ENCOUNTER_COST">BASE_ENCOUNTER_COST</span></td>
+                                    <td>DOUBLE</td>
+                                    <td>0</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="TOTAL_CLAIM_COST">TOTAL_CLAIM_COST</span></td>
+                                    <td>DOUBLE</td>
+                                    <td>0</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="PAYER_COVERAGE">PAYER_COVERAGE</span></td>
+                                    <td>DOUBLE</td>
+                                    <td>0</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="REASONCODE">REASONCODE</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="REASONDESCRIPTION">REASONDESCRIPTION</span></td>
+                                    <td>VARCHAR</td>
+                                    <td>255</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td></td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="ALLERGIES.html" target="_top" title="ALLERGIES" alt="" coords="755,585,919,761">
+<area shape="rect" id="node2" href="ENCOUNTERS.html" target="_top" title="ENCOUNTERS" alt="" coords="339,835,683,1344">
+<area shape="rect" id="node3" href="PATIENTS.html" target="_top" title="PATIENTS" alt="" coords="29,741,271,859">
+<area shape="rect" id="node7" href="PAYERS.html" target="_top" title="PAYERS" alt="" coords="5,1360,295,1477">
+<area shape="rect" id="node8" href="PROVIDERS.html" target="_top" title="PROVIDERS" alt="" coords="63,984,237,1131">
+<area shape="rect" id="node4" href="CAREPLANS.html" target="_top" title="CAREPLANS" alt="" coords="727,779,947,955">
+<area shape="rect" id="node5" href="CONDITIONS.html" target="_top" title="CONDITIONS" alt="" coords="745,972,928,1148">
+<area shape="rect" id="node6" href="DEVICES.html" target="_top" title="DEVICES" alt="" coords="759,1165,914,1341">
+<area shape="rect" id="node9" href="IMMUNIZATIONS.html" target="_top" title="IMMUNIZATIONS" alt="" coords="731,1359,943,1535">
+<area shape="rect" id="node10" href="MEDICATIONS.html" target="_top" title="MEDICATIONS" alt="" coords="727,1552,947,1757">
+<area shape="rect" id="node11" href="OBSERVATIONS.html" target="_top" title="OBSERVATIONS" alt="" coords="737,5,937,181">
+<area shape="rect" id="node12" href="PROCEDURES.html" target="_top" title="PROCEDURES" alt="" coords="727,199,947,375">
+<area shape="rect" id="node13" href="SUPPLIES.html" target="_top" title="SUPPLIES" alt="" coords="759,392,915,568">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/ENCOUNTERS.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="ALLERGIES.html" target="_top" title="ALLERGIES" alt="" coords="1031,1359,1195,1535">
+<area shape="rect" id="node2" href="ENCOUNTERS.html" target="_top" title="ENCOUNTERS" alt="" coords="593,875,937,1384">
+<area shape="rect" id="node3" href="PATIENTS.html" target="_top" title="PATIENTS" alt="" coords="283,965,526,1083">
+<area shape="rect" id="node6" href="PAYERS.html" target="_top" title="PAYERS" alt="" coords="260,1555,549,1672">
+<area shape="rect" id="node7" href="PROVIDERS.html" target="_top" title="PROVIDERS" alt="" coords="318,1689,491,1836">
+<area shape="rect" id="node4" href="CAREPLANS.html" target="_top" title="CAREPLANS" alt="" coords="1003,5,1223,181">
+<area shape="rect" id="node5" href="CLAIMS.html" target="_top" title="CLAIMS" alt="" coords="671,1692,859,1780">
+<area shape="rect" id="node16" href="ORGANIZATIONS.html" target="_top" title="ORGANIZATIONS" alt="" coords="5,1721,216,1809">
+<area shape="rect" id="node8" href="CLAIMS_TRANSACTIONS.html" target="_top" title="CLAIMS_TRANSACTIONS" alt="" coords="981,1775,1244,1863">
+<area shape="rect" id="node9" href="CONDITIONS.html" target="_top" title="CONDITIONS" alt="" coords="1021,199,1204,375">
+<area shape="rect" id="node10" href="DEVICES.html" target="_top" title="DEVICES" alt="" coords="1035,392,1190,568">
+<area shape="rect" id="node11" href="IMMUNIZATIONS.html" target="_top" title="IMMUNIZATIONS" alt="" coords="1007,585,1219,761">
+<area shape="rect" id="node12" href="MEDICATIONS.html" target="_top" title="MEDICATIONS" alt="" coords="1003,1552,1223,1757">
+<area shape="rect" id="node13" href="OBSERVATIONS.html" target="_top" title="OBSERVATIONS" alt="" coords="1013,779,1213,955">
+<area shape="rect" id="node14" href="PAYER_TRANSITIONS.html" target="_top" title="PAYER_TRANSITIONS" alt="" coords="646,1545,885,1633">
+<area shape="rect" id="node15" href="PROCEDURES.html" target="_top" title="PROCEDURES" alt="" coords="1003,972,1223,1148">
+<area shape="rect" id="node17" href="SUPPLIES.html" target="_top" title="SUPPLIES" alt="" coords="1035,1165,1191,1341">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/ENCOUNTERS.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  schemaspy:
+    image: schemaspy/schemaspy:6.1.0
+    volumes:
+      - ./output:/output
+      - ./config:/config
+      - ./jdbc:/jdbc
+    container_name: schemaspy
+    command: -configFile /config/snowflake.properties -s HOSPITAL -t snowflake -dp /jdbc/snowflake-jdbc-3.0.14.jar
+    ports:
+      - 8082:8080

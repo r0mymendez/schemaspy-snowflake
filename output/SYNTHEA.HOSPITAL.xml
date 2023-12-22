@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="SYNTHEA" schema="HOSPITAL" type="Snowflake - 7.44.2 (driver change version: 3.0.14)">
+   <tables>
+      <table catalog="SYNTHEA" name="ALLERGIES" numRows="1078" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_f0ab3069-3f1d-4c1e-8bbb-6e571754b2c2" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_927e5eb0-6c8c-4cc1-a4f2-064676de182a" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="SYSTEM" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="TYPE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="CATEGORY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="REACTION1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="DESCRIPTION1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="SEVERITY1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="REACTION2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="14" name="DESCRIPTION2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="15" name="SEVERITY2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="CAREPLANS" numRows="5384" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_77b204cd-a7bf-413e-96e7-be9b0085cf18" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_5276bbad-aa94-4aa1-8fe5-8062df7bbc16" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="REASONCODE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="REASONDESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="CLAIMS" numRows="192200" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <child catalog="SYNTHEA" column="CLAIMID" foreignKey="SYS_CONSTRAINT_676356a4-d67c-49f9-b7f2-4c8a8bdfda1a" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS_TRANSACTIONS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_07b0c7b7-417e-43df-9627-edd075257adb" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="PROVIDER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_4597a0cb-8d64-4f2a-bff1-df1105eabf9a" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PRIMARY_PAYER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_2b47049d-4ec8-4e20-b2bf-dc99d9ac9b97" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="SECONDARY_PAYER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_0c806c9c-2025-4196-aff7-62567b87176c" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="DEPARTMENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="PATIENT_DEPARTMENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="DIAGNOSIS1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="DIAGNOSIS2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="DIAGNOSIS3" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="DIAGNOSIS4" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="DIAGNOSIS5" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="DIAGNOSIS6" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="DIAGNOSIS7" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="14" name="DIAGNOSIS8" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="15" name="REFERRINGPROVIDERID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_1b514eef-6d51-4e59-8004-7778a946dbaa" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="16" name="APPOINTMENTID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="17" name="CURRENTILLNESSDATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="18" name="SERVICEDATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="19" name="SUPERVISINGPROVIDERID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_06aef3a8-f461-4b77-b8f7-6564a2521e22" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="20" name="STATUS1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="21" name="STATUS2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="22" name="STATUSP" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="23" name="OUTSTANDING1" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="24" name="OUTSTANDING2" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="25" name="OUTSTANDINGP" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="26" name="LASTBILLEDDATE1" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="27" name="LASTBILLEDDATE2" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="28" name="LASTBILLEDDATEP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="29" name="HEALTHCARECLAIMTYPEID1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="30" name="HEALTHCARECLAIMTYPEID2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="CLAIMS_TRANSACTIONS" numRows="1155144" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="CLAIMID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_676356a4-d67c-49f9-b7f2-4c8a8bdfda1a" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="CHARGEID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENTID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_6f8538f1-dd06-4a3e-b554-a5d33494e001" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="TYPE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="2" id="5" name="AMOUNT" nullable="true" remarks="" size="10" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="METHOD" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="FROM_DATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="TO_DATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="PLACE_OF_SERVICE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="PROCEDURE_CODE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="MODIFIER1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="MODIFIER2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="DIAGNOSIS_REF1" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="14" name="DIAGNOSIS_REF2" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="15" name="DIAGNOSIS_REF3" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="16" name="DIAGNOSIS_REF4" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="17" name="UNITS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="18" name="DEPARTMENTID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="19" name="NOTES" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="2" id="20" name="UNITAMOUNT" nullable="true" remarks="" size="10" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="21" name="TRANSFEROUTID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="22" name="TRANSFERTYPE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="2" id="23" name="PAYMENTS" nullable="true" remarks="" size="10" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="2" id="24" name="ADJUSTMENTS" nullable="true" remarks="" size="10" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="2" id="25" name="TRANSFERS" nullable="true" remarks="" size="10" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="2" id="26" name="OUTSTANDING" nullable="true" remarks="" size="10" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="27" name="APPOINTMENT_ID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="28" name="LINE_NOTE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="29" name="PATIENT_INSURANCE_ID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="30" name="FEE_SCHEDULE_ID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="31" name="PROVIDER_ID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_b579a988-667d-404c-9aa6-f9f9efc91bbc" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="32" name="SUPERVISING_PROVIDER_ID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_9b50a613-0087-48a5-a774-1a2914ffc590" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="CONDITIONS" numRows="55648" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_3a3a128f-1fd2-48d3-b8d4-87eaa81cde23" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_8fab7423-f175-4f84-83ef-9fd273d9fa79" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="DESCRIPTION" nullable="false" remarks="" size="512" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="DEVICES" numRows="799" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_e2a1a98d-f168-4890-809f-d73aa8374427" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_88977ccd-49e7-4219-90ba-1c9f439b1757" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="UDI" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="ENCOUNTERS" numRows="91396" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_927e5eb0-6c8c-4cc1-a4f2-064676de182a" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ALLERGIES"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_5276bbad-aa94-4aa1-8fe5-8062df7bbc16" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CAREPLANS"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_8fab7423-f175-4f84-83ef-9fd273d9fa79" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CONDITIONS"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_88977ccd-49e7-4219-90ba-1c9f439b1757" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="DEVICES"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_74e6bc52-318f-4d9b-ae74-12e8776dbee7" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="IMMUNIZATIONS"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_0e092281-2d6e-471c-8475-e76ac484b3e1" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="MEDICATIONS"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_4b5caadd-24c2-4545-b02a-1941d5acc009" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="OBSERVATIONS"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_645afbba-0392-4453-845f-456cd9e88c90" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROCEDURES"/>
+            <child catalog="SYNTHEA" column="ENCOUNTER" foreignKey="SYS_CONSTRAINT_c8afb533-359a-4c0f-b21e-08aca4665862" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="SUPPLIES"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_e0684af9-ae3f-499c-a922-c005b4709394" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="ORGANIZATION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="PROVIDER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_571a191b-05f1-487f-8066-08c10ca615ae" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="PAYER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_f49cf6bc-f485-491e-a4e1-bcfde465e348" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="ENCOUNTERCLASS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="CODE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="BASE_ENCOUNTER_COST" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="TOTAL_CLAIM_COST" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="PAYER_COVERAGE" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="REASONCODE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="14" name="REASONDESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="IMMUNIZATIONS" numRows="21482" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_19205834-e6b3-410c-866f-dad0617d00a3" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_74e6bc52-318f-4d9b-ae74-12e8776dbee7" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="BASE_COST" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="MEDICATIONS" numRows="100804" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_fd050e68-2816-4e4a-933b-03ed2b3e74d2" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="PAYER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_914c5209-21cb-408b-b648-cb5ee9e8e51c" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_0e092281-2d6e-471c-8475-e76ac484b3e1" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="BASE_COST" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="PAYER_COVERAGE" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="DISPENSES" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="TOTALCOST" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="REASONCODE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="REASONDESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="OBSERVATIONS" numRows="957535" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_54277ced-c2e0-47d8-9ee5-5340cbb764f3" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="ENCOUNTER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_4b5caadd-24c2-4545-b02a-1941d5acc009" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="CATEGORY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="VALUE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="UNITS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="TYPE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="ORGANIZATIONS" numRows="880" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <child catalog="SYNTHEA" column="ORGANIZATION" foreignKey="SYS_CONSTRAINT_8008afdf-0655-40c2-a4d2-c6ddb23848a3" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROVIDERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="NAME" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="ADDRESS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="CITY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="STATE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="ZIP" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="LAT" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="LON" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="PHONE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="REVENUE" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="UTILIZATION" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="PATIENTS" numRows="1504" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_f0ab3069-3f1d-4c1e-8bbb-6e571754b2c2" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ALLERGIES"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_77b204cd-a7bf-413e-96e7-be9b0085cf18" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CAREPLANS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_07b0c7b7-417e-43df-9627-edd075257adb" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+            <child catalog="SYNTHEA" column="PATIENTID" foreignKey="SYS_CONSTRAINT_6f8538f1-dd06-4a3e-b554-a5d33494e001" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS_TRANSACTIONS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_3a3a128f-1fd2-48d3-b8d4-87eaa81cde23" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CONDITIONS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_e2a1a98d-f168-4890-809f-d73aa8374427" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="DEVICES"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_e0684af9-ae3f-499c-a922-c005b4709394" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_19205834-e6b3-410c-866f-dad0617d00a3" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="IMMUNIZATIONS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_fd050e68-2816-4e4a-933b-03ed2b3e74d2" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="MEDICATIONS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_54277ced-c2e0-47d8-9ee5-5340cbb764f3" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="OBSERVATIONS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_985b080e-597a-440b-af29-4078be588ce1" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYER_TRANSITIONS"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_1040a22b-d9eb-448e-876f-f924ae272090" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PROCEDURES"/>
+            <child catalog="SYNTHEA" column="PATIENT" foreignKey="SYS_CONSTRAINT_15db7e07-794c-4149-8b3f-2eb2c2dbc8fd" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="SUPPLIES"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="BIRTHDATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="DEATHDATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="SSN" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="DRIVERS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="PASSPORT" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="PREFIX" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="FIRST" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="LAST" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="SUFFIX" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="MAIDEN" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="MARITAL" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="RACE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="ETHNICITY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="14" name="GENDER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="15" name="BIRTHPLACE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="16" name="ADDRESS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="17" name="CITY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="18" name="STATE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="19" name="COUNTY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="20" name="FIPS" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="21" name="ZIP" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="22" name="LAT" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="23" name="LON" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="24" name="HEALTHCARE_EXPENSES" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="25" name="HEALTHCARE_COVERAGE" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="26" name="INCOME" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="PAYER_TRANSITIONS" numRows="64922" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_985b080e-597a-440b-af29-4078be588ce1" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="MEMBERID" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="START_DATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="END_DATE" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="PAYER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_f590a959-834c-46b2-a915-6e35eacf4629" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="SECONDARY_PAYER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="PLAN_OWNERSHIP" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="OWNER_NAME" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="PAYERS" numRows="10" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <child catalog="SYNTHEA" column="PRIMARY_PAYER" foreignKey="SYS_CONSTRAINT_2b47049d-4ec8-4e20-b2bf-dc99d9ac9b97" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+            <child catalog="SYNTHEA" column="SECONDARY_PAYER" foreignKey="SYS_CONSTRAINT_0c806c9c-2025-4196-aff7-62567b87176c" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+            <child catalog="SYNTHEA" column="PAYER" foreignKey="SYS_CONSTRAINT_f49cf6bc-f485-491e-a4e1-bcfde465e348" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+            <child catalog="SYNTHEA" column="PAYER" foreignKey="SYS_CONSTRAINT_914c5209-21cb-408b-b648-cb5ee9e8e51c" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="MEDICATIONS"/>
+            <child catalog="SYNTHEA" column="PAYER" foreignKey="SYS_CONSTRAINT_f590a959-834c-46b2-a915-6e35eacf4629" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PAYER_TRANSITIONS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="NAME" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="OWNERSHIP" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="ADDRESS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="CITY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="STATE_HEADQUARTERED" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="ZIP" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="PHONE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="AMOUNT_COVERED" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="AMOUNT_UNCOVERED" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="REVENUE" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="COVERED_ENCOUNTERS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="12" name="UNCOVERED_ENCOUNTERS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="13" name="COVERED_MEDICATIONS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="14" name="UNCOVERED_MEDICATIONS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="15" name="COVERED_PROCEDURES" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="16" name="UNCOVERED_PROCEDURES" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="17" name="COVERED_IMMUNIZATIONS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="18" name="UNCOVERED_IMMUNIZATIONS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="19" name="UNIQUE_CUSTOMERS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="20" name="QOLS_AVG" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="21" name="MEMBER_MONTHS" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="PROCEDURES" numRows="149202" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="START" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="STOP" nullable="true" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_1040a22b-d9eb-448e-876f-f924ae272090" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_645afbba-0392-4453-845f-456cd9e88c90" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="DESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="BASE_COST" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="REASONCODE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="REASONDESCRIPTION" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="PROVIDERS" numRows="1760" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <child catalog="SYNTHEA" column="PROVIDER" foreignKey="SYS_CONSTRAINT_4597a0cb-8d64-4f2a-bff1-df1105eabf9a" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+            <child catalog="SYNTHEA" column="REFERRINGPROVIDERID" foreignKey="SYS_CONSTRAINT_1b514eef-6d51-4e59-8004-7778a946dbaa" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+            <child catalog="SYNTHEA" column="SUPERVISINGPROVIDERID" foreignKey="SYS_CONSTRAINT_06aef3a8-f461-4b77-b8f7-6564a2521e22" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS"/>
+            <child catalog="SYNTHEA" column="PROVIDER_ID" foreignKey="SYS_CONSTRAINT_b579a988-667d-404c-9aa6-f9f9efc91bbc" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS_TRANSACTIONS"/>
+            <child catalog="SYNTHEA" column="SUPERVISING_PROVIDER_ID" foreignKey="SYS_CONSTRAINT_9b50a613-0087-48a5-a774-1a2914ffc590" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="CLAIMS_TRANSACTIONS"/>
+            <child catalog="SYNTHEA" column="PROVIDER" foreignKey="SYS_CONSTRAINT_571a191b-05f1-487f-8066-08c10ca615ae" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="ORGANIZATION" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_8008afdf-0655-40c2-a4d2-c6ddb23848a3" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ORGANIZATIONS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="NAME" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="GENDER" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="SPECIALITY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="ADDRESS" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="CITY" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="STATE" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="8" name="ZIP" nullable="true" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="9" name="LAT" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="10" name="LON" nullable="true" remarks="" size="0" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="11" name="UTILIZATION" nullable="true" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+      <table catalog="SYNTHEA" name="SUPPLIES" numRows="2339" remarks="" schema="HOSPITAL" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="ID" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="DATE" nullable="false" remarks="" size="0" type="DATE" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="PATIENT" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_15db7e07-794c-4149-8b3f-2eb2c2dbc8fd" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="PATIENTS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="ENCOUNTER" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12">
+            <parent catalog="SYNTHEA" column="ID" foreignKey="SYS_CONSTRAINT_c8afb533-359a-4c0f-b21e-08aca4665862" implied="false" onDeleteCascade="false" schema="HOSPITAL" table="ENCOUNTERS"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="4" name="CODE" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="DESCRIPTION" nullable="false" remarks="" size="255" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="QUANTITY" nullable="false" remarks="" size="38" type="NUMBER" typeCode="3"/>
+         <primaryKey column="ID" sequenceNumberInPK="1"/>
+      </table>
+   </tables>
+</database>

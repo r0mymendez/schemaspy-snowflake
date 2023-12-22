@@ -1,4 +1,4 @@
-❄️Snowflake SchemaSpy  🐳 Docker Compose
+# ❄️Snowflake SchemaSpy  🐳 Docker Compose
 
 ## Overview
 

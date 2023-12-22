@@ -78,7 +78,9 @@ Upon executing Docker Compose, you can obtain our entire web page in the output 
 * **Routines:** Presents information about stored routines or procedures.
 
 ## Accessing Example
-Visit the following link to access a demo. In this example, a synthetic database named Synthea was used, generated from synthetic data.
+
+In the provided example, we showcase a demo utilizing a synthetic database called Synthea. Synthea is a state-of-the-art synthetic data generation tool designed for creating realistic, yet entirely fictitious, patient records and healthcare data. It enables the simulation of diverse medical scenarios, making it a valuable resource for testing and development purposes in the healthcare domain.
+Visit the following [link to access a demo](https://r0mymendez.github.io/schemaspy-snowflake). 
 
 ![](img/Schemapy-DER.png)
 ![](img/Schemapy-tables_summary.png)

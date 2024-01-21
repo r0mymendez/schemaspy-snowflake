@@ -80,6 +80,10 @@ After executing Docker Compose, you'll find a web site in the output folder. Thi
 ## Accessing Example
 
 In the provided example, we showcase a demo utilizing a synthetic database called Synthea. Synthea is a state-of-the-art synthetic data generation tool designed for creating realistic, yet entirely fictitious, patient records and healthcare data. It enables the simulation of diverse medical scenarios, making it a valuable resource for testing and development purposes in the healthcare domain.
+
+---
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support%20my%20work-FFDD00?style=flat&labelColor=101010&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/r0mymendez)
 Visit the following [link to access a demo](https://r0mymendez.github.io/schemaspy-snowflake). 
 
 ![](img/Schemapy-DER.png)
